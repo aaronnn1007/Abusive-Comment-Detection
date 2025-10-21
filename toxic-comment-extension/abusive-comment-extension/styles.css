@@ -1,0 +1,145 @@
+/* Toxic Comment Detector Styles */
+
+.toxic-comment-wrapper {
+    position: relative !important;
+    display: inline-block !important;
+    width: 100% !important;
+    margin: 2px 0 !important;
+}
+
+.toxic-comment-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(255, 68, 68, 0.1) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    border: 1px solid #ff4444 !important;
+    border-radius: 4px !important;
+    z-index: 10 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 12px !important;
+    color: #cc0000 !important;
+    font-weight: bold !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif !important;
+    transition: all 0.3s ease !important;
+}
+
+.toxic-comment-overlay:hover {
+    background: rgba(255, 68, 68, 0.15) !important;
+    border-color: #ff2222 !important;
+}
+
+.toxic-comment-toggle {
+    position: absolute !important;
+    top: 2px !important;
+    right: 2px !important;
+    background: #ff4444 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 3px !important;
+    padding: 2px 6px !important;
+    font-size: 10px !important;
+    cursor: pointer !important;
+    z-index: 11 !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.toxic-comment-toggle:hover {
+    background: #ff2222 !important;
+}
+
+/* Platform-specific adjustments */
+
+/* YouTube */
+ytd-comment-thread-renderer .toxic-comment-wrapper,
+ytd-comment-view-model .toxic-comment-wrapper {
+    border-radius: 8px !important;
+}
+
+/* Facebook */
+[data-testid="comment"] .toxic-comment-wrapper {
+    border-radius: 16px !important;
+    margin: 4px 0 !important;
+}
+
+/* Instagram */
+.instagram .toxic-comment-wrapper {
+    border-radius: 4px !important;
+    margin: 2px 0 !important;
+}
+
+/* Twitter */
+[data-testid="tweet"] .toxic-comment-wrapper {
+    border-radius: 16px !important;
+    margin: 4px 0 !important;
+}
+
+/* Reddit */
+.Comment .toxic-comment-wrapper {
+    border-radius: 4px !important;
+    margin: 4px 0 !important;
+}
+
+/* Animation for blur effect */
+@keyframes blurIn {
+    from {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+    }
+    to {
+        opacity: 1;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+}
+
+.toxic-comment-overlay {
+    animation: blurIn 0.3s ease-in-out !important;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .toxic-comment-overlay {
+        font-size: 11px !important;
+        padding: 2px !important;
+    }
+    
+    .toxic-comment-toggle {
+        font-size: 9px !important;
+        padding: 1px 4px !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .toxic-comment-overlay {
+        background: rgba(255, 0, 0, 0.3) !important;
+        border: 2px solid #ff0000 !important;
+        color: #000000 !important;
+    }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    .toxic-comment-overlay {
+        background: rgba(255, 68, 68, 0.15) !important;
+        border-color: #ff6666 !important;
+        color: #ff9999 !important;
+    }
+    
+    .toxic-comment-toggle {
+        background: #cc3333 !important;
+    }
+    
+    .toxic-comment-toggle:hover {
+        background: #ff4444 !important;
+    }
+}

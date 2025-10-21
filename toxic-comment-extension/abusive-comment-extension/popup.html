@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Abusive Comment Detector</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #181c24;
+            margin: 0;
+            padding: 0;
+            color: #e3eafc;
+        }
+        .card {
+            background: #23293a;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(30,40,60,0.18);
+            padding: 24px 20px 20px 20px;
+            margin: 12px;
+            min-width: 320px;
+            max-width: 370px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 18px;
+            color: #60aaff;
+        }
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 25px;
+            background-color: #3a4256;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .toggle-switch.active {
+            background-color: #4CAF50;
+        }
+        .toggle-slider {
+            position: absolute;
+            width: 21px;
+            height: 21px;
+            background-color: #e3eafc;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+        }
+        .toggle-switch.active .toggle-slider {
+            transform: translateX(25px);
+        }
+        .stats {
+            background: #20263a;
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 18px;
+            color: #e3eafc;
+        }
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 7px;
+            font-size: 15px;
+        }
+        .test-section {
+            margin-top: 18px;
+            border-top: 1px solid #2c3446;
+            padding-top: 14px;
+        }
+        #testInput {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #3a4256;
+            background: #23293a;
+            color: #e3eafc;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        button {
+            background: linear-gradient(90deg, #60aaff 0%, #38c6ff 100%);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 9px 0;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #38c6ff 0%, #60aaff 100%);
+        }
+        #testResult {
+            margin-top: 12px;
+            padding: 12px;
+            border-radius: 6px;
+            display: none;
+            font-size: 15px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .toxic-result {
+            background: #3a1a1a;
+            color: #ff6b6b;
+        }
+        .clean-result {
+            background: #1a2a1a;
+            color: #60ffb0;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <h2>🛡️ Toxic Comment Detector</h2>
+        </div>
+        <div class="toggle-container">
+            <span>Enable Protection</span>
+            <div class="toggle-switch active" id="toggleSwitch">
+                <div class="toggle-slider"></div>
+            </div>
+        </div>
+        <div class="stats">
+            <h4>Today's Stats</h4>
+            <div class="stat-item">
+                <span>Comments Checked:</span>
+                <span id="checkedCount">0</span>
+            </div>
+            <div class="stat-item">
+                <span>Toxic Comments Blocked:</span>
+                <span id="blockedCount">0</span>
+            </div>
+            <div class="stat-item">
+                <span>Protection Rate:</span>
+                <span id="protectionRate">0%</span>
+            </div>
+        </div>
+        <div class="test-section">
+            <h4>Test Text for Toxicity</h4>
+            <textarea id="testInput" placeholder="Enter text to check for toxicity..." rows="3"></textarea>
+            <button id="testBtn">Check Toxicity</button>
+            <div id="testResult"></div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

@@ -33,3 +33,4 @@ toxic-comment-extension/**/.DS_Store
 # Remove sensitive files if any
 # Add more patterns as needed for your project
 toxic_bert_model/
+best_twitter_roberta/model.safetensors

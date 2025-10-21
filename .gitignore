@@ -12,7 +12,9 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
- 
+.streamlit/
+.stcache/
+.streamlit_cache/
 # Jupyter/Notebook
 .ipynb_checkpoints/
 # Data files (add your own patterns)

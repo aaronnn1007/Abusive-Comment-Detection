@@ -60,7 +60,16 @@ streamlit run app_streamlit.py
 
 ## Model
 - Fine-tuned RoBERTa (multi-label, 6 categories)
-- Model files in `best_twitter_roberta/` (not included in repo; download separately if needed)
+- Model files in `best_twitter_roberta/` (not included in repo).
+
+### Download the Model from Hugging Face
+
+**Note:** The model files are not included in this repository due to their size. You must manually download the model from Hugging Face before running the backend or Streamlit app.
+
+- Model name: `cardiffnlp/twitter-roberta-base`
+- Download from: https://huggingface.co/cardiffnlp/twitter-roberta-base
+
+After downloading, place all model files into the `best_twitter_roberta/` directory in the project root.
 
 ## Contributing
 Pull requests and suggestions are welcome! Please open an issue for major changes.

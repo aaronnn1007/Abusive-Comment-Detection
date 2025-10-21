@@ -77,3 +77,11 @@ Pull requests and suggestions are welcome! Please open an issue for major change
 ## License
 MIT
 
+## Project Outputs
+
+### Map View
+![Map View](images/map_view.png)
+
+### Filter Demo
+![Filter Demo](images/filter_demo.png)
+

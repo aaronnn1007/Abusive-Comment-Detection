@@ -79,9 +79,9 @@ MIT
 
 ## Project Outputs
 
-### Map View
-![Map View](images/map_view.png)
+### Streamlit web app
+![Streamlit](images/Streamlit.png)
 
-### Filter Demo
-![Filter Demo](images/filter_demo.png)
+### Extension Popup
+![Extension_Popup](images/Extension_Popup.png)
 

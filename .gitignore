@@ -1,0 +1,35 @@
+# Python/Streamlit/ML project .gitignore
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+ 
+# Jupyter/Notebook
+.ipynb_checkpoints/
+# Data files (add your own patterns)
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.json
+*.parquet
+*.db
+# System/OS
+*.swp
+*.swo
+# Chrome extension build artifacts
+**/toxic-comment-extension/__MACOSX/
+toxic-comment-extension/**/._*
+toxic-comment-extension/**/.DS_Store
+# Remove sensitive files if any
+# Add more patterns as needed for your project
+toxic_bert_model/
